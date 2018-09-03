@@ -1,0 +1,89 @@
+/* pages/expect/expect.wxss */
+/* pages/next/next.wxss */
+
+page {
+  background: #f2f2f2;
+}
+
+.head image {
+  width: 750rpx;
+  height: 500rpx;
+}
+
+.phone {
+  margin-top: 20rpx;
+}
+.phone-expect{
+  width: 520rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+}
+.phone-expect-gray{
+  color: #999;
+}
+.phone-expect-black{
+  color: #000;
+}
+
+.phone-expect text{
+  float: right;
+
+  font-size: 40rpx;
+  color: #c7c7cc;
+}
+.phone-input {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  background: #fff;
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.phone-input label {
+  width: 140rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 0 30rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.phone-input-name, .phone-input-code {
+  width: 300rpx;
+  height: 88rpx;
+  overflow: hidden;
+}
+
+
+.width-name{
+  width: 400rpx;
+}
+.phone-input button {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  font-size: 28rpx;
+  color: #1aad19;
+  background: none;
+}
+
+button::after {
+  border: none;
+}
+
+.phone>button {
+  width: 690rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 6rpx;
+  background: #1aad19;
+  margin-top: 60rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+button[disabled]:not([type]) {
+  background: none;
+}

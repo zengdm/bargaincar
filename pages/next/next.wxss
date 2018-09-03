@@ -1,0 +1,100 @@
+/* pages/next/next.wxss */
+
+page {
+  background: #f2f2f2;
+}
+
+.head {
+  position: relative;
+}
+
+.head image {
+  width: 750rpx;
+  height: 500rpx;
+}
+
+.head .head-pz {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  width: 84rpx;
+  height: 84rpx;
+}
+
+.phone {
+  margin-top: 20rpx;
+}
+
+.phone-input {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  background: #fff;
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.phone-input label {
+  width: 140rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 0 30rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.phone-input-name, .phone-input-code {
+  width: 300rpx;
+  height: 88rpx;
+  overflow: hidden;
+}
+
+.width-name{
+  width: 400rpx;
+}
+
+.phone-input button {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  font-size: 28rpx;
+  color: #1aad19;
+  background: none;
+}
+
+button::after {
+  border: none;
+}
+
+.phone>button {
+  width: 690rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 6rpx;
+  background: #1aad19;
+  margin-top: 60rpx;
+  color: #fff;
+  font-size: 36rpx;
+}
+
+.pic-address{
+    position: absolute;
+    left: 186rpx;
+    top: 20rpx;
+}
+
+.head .pic-address-icon{
+  width: 24rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.pic-address text{
+  font-size:28rpx;
+  color:#1aad19;
+  margin-left: 10rpx;
+}
+
+button[disabled]:not([type]) {
+  background: none;
+}

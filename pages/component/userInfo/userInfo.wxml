@@ -1,0 +1,13 @@
+<!--pages/inc/component/userInfo/userInfo.wxml-->
+
+ <view  hidden='{{!show}}' catchtouchmove="catchtouchmove">
+ <!-- <view class='userBox' bindtap='hideUser'></view> -->
+ <view class='userBox'></view>
+  <!-- <view class='btnBox'>
+    <button class='btnBox-btn' bindgetuserinfo='bindgetuserinfo' open-type='getUserInfo'>微信快速登录</button>
+  </view> -->
+  <view class='new-box'>
+  <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1529666900-ec319cadbfbac6fb-240w-240h.gif'></image>
+   <button class='btnBox-btn' bindgetuserinfo='bindgetuserinfo' open-type='getUserInfo'>微信快速登录</button>
+  </view>
+</view>

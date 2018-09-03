@@ -1,0 +1,6 @@
+{
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "user-btn": "/pages/component/userInfo/userInfo"
+  }
+}

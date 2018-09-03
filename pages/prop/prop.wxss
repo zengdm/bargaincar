@@ -1,0 +1,34 @@
+/* pages/prop/prop.wxss */
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* height: 1448rpx; */
+  bottom: 0;
+  background: url('http://i2.dd-img.com/assets/image/1535622561-1c9ed24e4df55c0a-750w-1448h.jpg') no-repeat;
+  background-size: 100%;
+}
+
+.banner-next image {
+  width: 160rpx;
+  height: 160rpx;
+  float: right;
+}
+
+.banner-now {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  margin-left: -200rpx;
+  width: 400rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  /* background-image: linear-gradient(-176deg, #33f05a 1%, #00d34d 100%); */
+  background: #1aad19;
+  border-radius: 6rpx;
+  font-size: 36rpx;
+  color: #fff;
+}

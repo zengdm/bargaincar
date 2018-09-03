@@ -1,0 +1,75 @@
+/* pages/past/past.wxss */
+
+page {
+  background-color: #f1f1f1;
+  font-size: 34rpx;
+  color: #333;
+}
+.active-join,.active-past {
+  width: 690rpx;
+  margin: 0 auto;
+}
+.active-join-title {
+  margin: 30rpx 0 20rpx 0;
+}
+.active-block{
+  width: 690rpx;
+  height: 310rpx;
+  margin: 0 auto 32rpx auto;
+  border-radius: 12rpx;
+  background: #fff;
+  padding: 0 30rpx;
+}
+.active-block-title{
+  padding: 10px 0;
+  border-bottom: 1rpx solid #e6e6e6;
+  margin-bottom: 0rpx;
+}
+.active-block-title text{
+  color: #1aad19;
+}
+.active-info-rank{
+  margin-top: 20rpx;
+}
+.active-info-head{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  border: 2rpx solid #f7bd13;
+  overflow: hidden;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+.active-info-head>image{
+   width: 80rpx;
+   height: 80rpx;
+}
+.active-info-energy>image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 14rpx;
+  vertical-align: middle;
+}
+.active-info-energy>text{
+  font-size: 32rpx;
+  color: #1aad19;
+  vertical-align: middle;
+}
+.active-info-nick{
+  line-height: 40rpx;
+  font-size: 24rpx;
+}
+.active-info-time{
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.active-info-right>image{
+  width: 240rpx;
+  height: 160rpx;
+}
+.active-info-right>view{
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: -5px;
+}

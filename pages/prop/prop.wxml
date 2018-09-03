@@ -1,0 +1,7 @@
+<!--pages/prop/prop.wxml-->
+<view class='banner'>
+  <view class='banner-next'>
+     <!-- <image bindtap='next' src='http://i1.dd-img.com/assets/image/1529393600-605bd79f77cbbab6-160w-160h.png'></image>  -->
+  </view>
+  <view class='banner-now' bindtap='bindTapBtn'>立即参加</view>
+</view>

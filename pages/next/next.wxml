@@ -1,0 +1,28 @@
+<!--pages/next/next.wxml-->
+<user-btn show="{{userShow}}"></user-btn>
+<view class='head'>
+  <view class='pic-address'>
+    <image class='pic-address-icon' mode="widthFix" src='http://i1.dd-img.com/assets/image/1529488006-8b41ee55ecf0438f-30w-30h.png'></image>
+    <text>北京</text>
+  </view>
+  <image src='{{imgs.preshow_img}}'></image>
+  <image class='head-pz' bindtap='goDdb' src='http://i1.dd-img.com/assets/image/1529401475-abb20ee961c1e86e-84w-84h.png'></image>
+</view>
+
+
+<view class='phone' wx:if="{{!applySuss}}">
+  <view class='phone-input'>
+    <label>姓名</label>
+    <input class='phone-input-name width-name' type='text' value='{{userName}}' placeholder="请输入真实姓名" maxlength='10' placeholder-style="color:#999;font-size:32rpx" bindinput="nameInputEvent" />
+  </view>
+  <view class='phone-input'>
+    <label>手机号</label>
+    <input class='phone-input-name' type='number' value='{{mobile}}' placeholder="请输入手机号码" maxlength='11' placeholder-style="color:#999;font-size:32rpx" bindinput="mobileInputEvent" />
+  </view>
+  <view class='phone-input'>
+    <label>验证码</label>
+    <input class='phone-input-code' type='number' value='{{verifyCodeNum}}' placeholder="请输入验证码" maxlength='6' placeholder-style="color:#999;font-size:32rpx" bindinput="codeInputEvent" />
+    <button bindtap='getCode' disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+  </view>
+  <button bindtap='bargain'>我要报名</button>
+</view>

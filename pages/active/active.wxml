@@ -1,0 +1,2 @@
+<!--pages/active/active.wxml-->
+<web-view src="{{mobile_url}}"></web-view>

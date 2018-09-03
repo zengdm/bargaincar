@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "能量榜",
+    "usingComponents": {
+      "user-btn": "/pages/component/userInfo/userInfo"
+    }
+}

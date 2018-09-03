@@ -1,0 +1,31 @@
+<!--pages/rule/rule.wxml-->
+
+<view class='explain'>参与即得向日葵视频VIP会员观影券</view>
+<view class='prize-box'>
+  <view class='prize'>
+    <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1529398149-60ad5e8f45478d6c-300w-200h.png'></image>
+    <view class='prize-btn'>一等奖</view>
+    <view class='prize-word'>5000元现金</view>
+    <view class='prize-word'>名额：1名</view>
+  </view>
+  <view class='prize'>
+    <image mode='widthFix' src='http://i1.dd-img.com/assets/image/1529398149-6b10cadcf8655970-300w-200h.png'></image>
+    <view class='prize-btn'>二等奖</view>
+    <view class='prize-word'>500元京东卡</view>
+    <view class='prize-word'>名额：10名</view>
+  </view>
+</view>
+<view class='rule'>
+  <view class='rule-details'>1.本活动中的邦补贴仅限于购买荣威Ei5车型的用户使用（本次活动仅限北京地区用户参与）；</view>
+  <view class='rule-details'>2.活动玩法：用户通过微信邀请朋友帮忙收集能量，邀请的朋友越多，越有机会获得最高5000元邦补贴。收集绿色能量值第1名的，获得电动邦提供的5000元现金补贴，第2到第11名获得500元京东卡；报名参与活动的用户可以收到由向日葵视频提供的会员观影券一张，我们将会在活动结束后的两周内，将观影券发给您；</view>
+  <view class='rule-details'>3.并列排名的，取最早获得最高能量值的用户；</view>
+  <view class='rule-details'>4.赢得邦补贴的用户提车后，凭身份证、行驶本、购车发票兑换补贴；</view>
+  <view class='rule-details'>5.报名人姓名必须和购车发票上的姓名一致；</view>
+  <view class='rule-details'>6.获奖用户必须在2018年7月9日之前完成提车并开具发票；</view>
+  <view class='rule-details'>7.报名时间：2018年6月15日-2018年6月27日；</view>
+  <view class='rule-details'>8.集能量时间：2018年6月25日-2018年6月27日；</view>
+  <view class='rule-details'>9.放弃补贴资格的，由排名下一位的用户获得；</view>
+  <view class='rule-details'>10.邦补贴仅限报名人使用，不得转让；</view>
+  <view class='rule-details'>11.通过作弊、违法手段获得邦补贴的，一律视为无效；</view>
+  <view class='rule-details'>12.领取补贴：公布结果当天，我们会联系获奖用户兑换邦补贴。</view>
+</view>

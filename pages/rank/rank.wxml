@@ -1,0 +1,124 @@
+<!--pages/rank/rank.wxml-->
+<!-- <text>pages/rank/rank.wxml</text> -->
+<user-btn show="{{userShow}}"></user-btn>
+<view class='head flex'>
+  <!-- <view class='head-lt {{ltClciked? "head-ltgt": ""}}' bindtap="prevActive">
+      <image wx:if="{{ltClciked}}" src='{{arrow.leftDisable}}'></image>
+      <image wx:else src='{{arrow.left}}'></image>
+    </view> -->
+  <!-- <view class='head-gt {{ltClciked? "": "head-ltgt"}}' bindtap="currentActive">
+      <image wx:if="{{ltClciked}}" src='{{arrow.right}}'></image>
+      <image wx:else src='{{arrow.rightDisable}}'></image>
+      </view> -->
+  <image class='headercar' mode='widthFix' src='{{imgs.car_img}}'></image>
+  <view class='headertxt'>
+    <text class="headetitle">{{car_carname}}{{endStatus}}</text>
+    <text class='headetime'>第{{head_activity_id}}期 {{active_start_time}} - {{active_end_time}}</text>
+  </view>
+
+</view>
+<view class='main'>
+  <view class='main-triangle'></view>
+  <view class='main-count'>
+    <view class='main-count-box'>
+      <view hidden='{{selfJoin}}' class='last-dao flex selfBlock'>
+        <text class='bargain_list_number first-top'>{{selfData.top}}</text>
+        <view class='bargain_list_autor'>
+          <view>
+            <image src='{{selfData.avatar}}'></image>
+          </view>
+        </view>
+        <view class='bargain_list_nick'>
+          {{selfData.nickname}}
+         <block wx:if="{{selfData.top == 1}}">
+            <image src='http://i1.dd-img.com/assets/image/1531747201-f6b39a6a84967ca3-104w-32h.png'></image>
+          </block>
+          <block wx:elif="{{selfData.top < 12}}">
+            <image src='http://i1.dd-img.com/assets/image/1531746622-0b7037bf7e69ba25-96w-32h.png'></image>
+          </block>
+
+           <view class='bargain_list_cx_name'>{{selfData.cx_name}}</view>
+        </view>
+        <view class='bargain_list_energy'>
+          <image src='../images/battery_mini.png'></image>
+          <text>x {{selfData.total_value}}</text>
+          <view>{{selfData.last_time}}</view>
+        </view>
+      </view>
+      <view hidden='{{selfJoin}}' class='main-count-line'></view>
+      <view class='bargain' wx:if="{{someJoin}}">
+        <view class='last-dao bargain-block flex' wx:for="{{rankdata}}" wx:key="id">
+
+          <block wx:if="{{index == 0}}">
+            <view class='bargain_list_number first'>
+              <image src='http://i1.dd-img.com/assets/image/1531745312-9a5aff7f89d167b4-60w-60h.png'></image>
+            </view>
+          </block>
+          <block wx:elif="{{index == 1}}">
+            <view class='bargain_list_number first'>
+              <image src='http://i1.dd-img.com/assets/image/1531746114-1b85210903f24f99-60w-60h.png'></image>
+            </view>
+          </block>
+          <block wx:elif="{{index == 2}}">
+            <view class='bargain_list_number first'>
+              <image src='http://i1.dd-img.com/assets/image/1531746136-1a608f473d57cd8c-60w-60h.png'></image>
+            </view>
+          </block>
+          <block wx:else>
+            <view class='bargain_list_number'>{{index+1}}</view>
+          </block>
+          <view class='bargain_list_autor'>
+            <!-- <view> <image src='{{item.avatar}}'></image></view> -->
+            <block wx:if="{{index+1 == indexTop}}">
+              <view class='bargain_self_author'>
+                <image src='{{item.avatar}}'></image>
+              </view>
+            </block>
+            <block wx:else>
+              <view>
+                <image src='{{item.avatar}}'></image>
+              </view>
+            </block>
+          </view>
+          <view class='bargain_list_nick'>
+            <text class='bargain_list_nickname'> {{item.nickname}} </text>
+
+            <block wx:if="{{index == 0}}">
+              <image src='http://i1.dd-img.com/assets/image/1531747201-f6b39a6a84967ca3-104w-32h.png'></image>
+              <view class='bargain_list_energy'>
+                <image src='../images/battery_mini.png'></image>
+                <text>x {{item.total_value}}</text>
+                <view>{{item.last_time}}</view>
+              </view>
+            </block>
+            <block wx:elif="{{index < 11}}">
+              <image src='http://i1.dd-img.com/assets/image/1531746622-0b7037bf7e69ba25-96w-32h.png'></image>
+              <view class='bargain_list_cx_name'>{{item.cx_name}}</view>
+            </block>
+            <block wx:else>
+              <!-- <image src='http://i1.dd-img.com/assets/image/1531746622-0b7037bf7e69ba25-96w-32h.png'></image> -->
+              <view class='bargain_list_cx_name'>{{item.cx_name}}</view>
+            </block>
+
+          </view>
+          <view class='bargain_list_energy'>
+            <block wx:if="{{index == 0}}">
+              <image class='bargain_list_cx_img' src='{{item.cx_img}}'></image>
+              <view class='bargain_list_cx_imgname'>{{item.cx_name}}</view>
+            </block>
+            <block wx:else>
+              <image src='../images/battery_mini.png'></image>
+              <text>x {{item.total_value}}</text>
+              <view>{{item.last_time}}</view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class='noBargain' wx:else>
+        <view class='noBargain-text'>暂无人报名</view>
+        <view class="joinBtn" bindtap='joinBtn'>立即报名</view>
+      </view>
+      <!-- <view class='bargain_list_more' bindtap='moreTap'>{{moreData}}</view> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,211 @@
+<!--pages/sale/sale.wxml-->
+<user-btn show="{{userShow}}"></user-btn>
+<!-- <view class="canvas-box">
+    <canvas  style="width: 686px;height: 686px;" canvas-id="mycanvas"/>
+</view>  -->
+<view hidden='{{loadShow}}'>
+  <view class='body-box'>
+    <view class='picture' wx:if="{{!shareOpen}}">
+      <view class='pic-address'>
+        <image class='pic-address-icon' mode="widthFix" src='http://i1.dd-img.com/assets/image/1529488006-8b41ee55ecf0438f-30w-30h.png'></image>
+        <text>北京</text>
+      </view>
+
+      <view class='pic-car'>
+        <block wx:if="{{applySuss}}">
+            <image src='{{carimg}}'></image>
+            <view>{{dreamCar}}</view>
+         </block>
+         <block wx:else>
+             <image src='{{defaul_images}}'></image>
+            <view>{{car_model_name}}</view>
+         </block>
+      </view>
+
+      
+      <!-- <image class='pic-bg' src='http://i1.dd-img.com/assets/image/1531825995-e61a2d0e36c10d59-750w-500h.png'></image> -->
+      
+      <view class='pic-rule' bindtap='goRule'>活动详情</view>
+
+      
+      <image class='pic-pz' bindtap='goDdb' data-cxid='{{cxid}}' src='http://i1.dd-img.com/assets/image/1529391006-43a328d28d8f71b3-84w-84h.png'></image>
+       
+    </view>
+
+    <view class='p-share' wx:if="{{shareOpen}}">
+
+      <view class='pic-address'>
+        <image class='pic-address-icon' mode="widthFix" src='http://i1.dd-img.com/assets/image/1529488006-8b41ee55ecf0438f-30w-30h.png'></image>
+        <text>北京</text>
+      </view>
+
+       <view class='pic-car'>
+        <block wx:if="{{applySuss}}">
+            <image src='{{carimg}}'></image>
+            <view>{{dreamCar}}</view>
+         </block>
+         <block wx:else>
+            <image src='{{defaul_images}}'></image>
+            <view>{{car_model_name}}</view>
+         </block>
+      </view>
+
+      <!-- <image class='pic-bg' src='http://i1.dd-img.com/assets/image/1531825995-e61a2d0e36c10d59-750w-500h.png'></image> -->
+      <!-- <view class='pic-rule' bindtap='goRule'>活动详情</view> -->
+
+    </view>
+
+    <view class='timer'>
+      <view class='timer-price'>
+        
+        <block wx:if="{{shareOpen || applySuss}}">
+        <!-- <block wx:if="applySuss"> -->
+          <image class='timer-price-img little' src="http://i2.dd-img.com/assets/image/1535612865-1bb471ab73390e21-100w-100h.png"></image>
+          <view class='timer-price-title'>我的能量值</view>
+          <!-- <view wx:if="{{shareOpen}}" class='timer-price-num'>{{shareValue}}</view> -->
+          <view class='timer-price-num'>{{total_value}}</view>
+        </block>
+        <block wx:else>
+          <image class='timer-price-img' src='{{imgs.price_img}}'></image>
+          <view>助您轻松购车</view>
+        </block>
+
+
+      </view>
+
+      <!-- 活动正在进行中倒计时begin -->
+      <view class='timer-num' wx:if="{{!activityEnd}}">
+        <view class='timer-num-word'>距离活动结束还剩</view>
+        <view class='timer-num-time'>
+          <block wx:if="{{downTime.day>0}}">{{downTime.day}}天</block>
+          <block wx:elif="{{downTime.hour}}">{{downTime.hour}}:{{downTime.minute}}:
+            <text class='timer-minute'>{{downTime.second}}.</text>
+            <text class='timer-msSec'>{{downTime.msSec}}</text> </block>
+          <block wx:else>01:01:01.7</block>
+        </view>
+      </view>
+      <!-- 活动正在进行中倒计时end -->
+
+      <!-- 活动结束 查看结果按钮begin -->
+      <view class='timer-result' wx:else>
+        <button bindtap='lookResult'>查看结果</button>
+      </view>
+      <!-- 活动结束 查看结果按钮end -->
+    </view>
+
+    <!-- 非分享入口打开begin -->
+    <block wx:if="{{!shareOpen}}">
+      <!-- 活动正在进行中用户状态begin -->
+      <block wx:if="{{!activityEnd}}">
+        <!-- 未报名状态，需要填写用户信息begin -->
+        <view class='phone' wx:if="{{!applySuss}}">
+          <!-- <form bindsubmit="applySubmit" report-submit="true"> -->
+          <view class='phone-input'>
+            <input class='phone-input-name' type='text' placeholder="真实姓名" maxlength='10' placeholder-style="color:#999;font-size:32rpx" bindinput="nameInputEvent" />
+          </view>
+          <view class='phone-input'>
+            <input class='phone-input-name' type='number' placeholder="手机号码" maxlength='11' placeholder-style="color:#999;font-size:32rpx" bindinput="mobileInputEvent" />
+          </view>
+          <view class='phone-input'>
+            <input class='phone-input-code' type='number' placeholder="验证码" maxlength='6' placeholder-style="color:#999;font-size:32rpx" bindinput="codeInputEvent" />
+            <button bindtap='getCode' disabled="{{buttonDisable}}">{{verifyCodeTime}}</button>
+          </view>
+          <button bindtap='bargain' data-cxid='{{cxid}}' class='phone-button'>开始集能量</button>
+          <!-- <button  class='phone-button' formType="submit">开始集能量</button>  -->
+          <!-- <button bindtap='bargain' disabled='{{loadingBloon}}'>开始集能量</button> -->
+          <!-- </form> -->
+        </view>
+        <!-- 未报名状态，需要填写用户信息end -->
+
+
+
+        <!-- 已报名状态begin -->
+        <block wx:if="{{applySuss}}">
+          <!-- <view class='apply'>
+            <view class='apply-green'>共收集绿色能量</view>
+            <view class='apply-num'>
+              <image src='http://i1.dd-img.com/assets/image/1529397264-4d6b0df7e8a3800a-140w-100h.png'></image>
+              <text>{{total_value}}</text>
+            </view>
+            <button open-type="share">找人帮忙集能量</button>
+          </view> -->
+
+          <button class='apply-button' open-type="share">找人帮忙集能量</button>
+          
+
+          <view class='friend'>
+            <view class='friend-title'>好友贡献值</view>
+            <view class='main'>
+              <view class='main-count'>
+                <view class='main-count-box'>
+                  <view class='bargain'>
+                    <view class='last-dao bargain-block flex' wx:for="{{rankData}}" wx:key="id">
+                      <text class='bargain_list_number'>{{index+1}}</text>
+                      <view class='bargain_list_autor'>
+                        <image src='{{item.avatar}}'></image>
+                      </view>
+                      <view class='bargain_list_nick'>{{item.nickname}}</view>
+                      <view class='bargain_list_energy'>
+                        <image src='../images/battery_mini.png'></image>
+                        <text>x {{item.value}}</text>
+                        <view>{{item.created_at}}</view>
+                      </view>
+                    </view>
+
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <!-- 已报名状态end -->
+      </block>
+      <!-- 活动正在进行中用户状态end -->
+
+      <!-- 活动结束 查看结果状态begin -->
+      <view class='result' wx:if="{{activityEnd}}">
+        <view>活动结束啦</view>
+        <view>下期再见</view>
+      </view>
+      <!-- 活动结束 查看结果状态end -->
+
+      <!-- <view class='dream' bindtap='goExpect'>怎么？不是你喜欢的车型？</view> -->
+    </block>
+    <!-- 非分享入口打开end -->
+
+
+
+    <!-- 集能量遮罩层begin -->
+    <view class='shade' wx:if="{{energySucc}}">
+      <view class='shade-box'>
+        <view class='shade-box-get'>恭喜获得</view>
+        <view class='shade-box-add'>
+          <image src='http://i1.dd-img.com/assets/image/1529397264-e8c97e5a570fd33f-140w-100h.png'></image>
+          <text>{{energyValue}}</text>
+        </view>
+        <view class='shade-box-text'>小手一抖，能量大增</view>
+        <button bindtap='onKnow'>朕知道了</button>
+      </view>
+    </view>
+    <!-- 集能量遮罩层end -->
+
+    <!-- 分享入口打开begin -->
+    <block wx:if="{{shareOpen}}">
+      <block wx:if="{{finished}}">
+      <view class='share-suss'>
+        <view class='share-suss-title'>恭喜您！为{{helpName}}收集了</view>
+        <view class='share-suss-pic'>
+          <image src='http://i2.dd-img.com/assets/image/1535615473-b8ff5737797657a9-140w-100h.png'></image>
+          <text>{{energyValue}}</text>
+        </view>
+      </view>
+      <button open-type="share" class='share-man'>集能量成功 找别人帮忙</button>
+      </block>
+      <button wx:else bindtap='helpEnergy' class='share-help'>帮忙集能量</button>
+      <button bindtap='homeBack' hidden='{{shareBtnBtm}}' class='share-home'>了解每周一款特价车</button>
+    </block>
+    <!-- 分享入口打开end -->
+
+
+  </view>
+</view>

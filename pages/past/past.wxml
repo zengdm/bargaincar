@@ -1,0 +1,75 @@
+<!--pages/past/past.wxml-->
+<user-btn show="{{userShow}}"></user-btn>
+<!-- 我参与的 -->
+<view class='active-join' hidden="{{joinAsgin}}">
+  <view class='active-join-title'>我参与的（{{joinTotalNum}}）</view>
+  <view class='avitve-main'>
+    <view class='active-join-block active-block' bindtap='pastActive' wx:for="{{pastJoined}}" wx:key="id" data-activity_id='{{item.activity_id}}'  data-active_start_time='{{item.start_timestamp}}' data-active_end_time ="{{item.end_timestamp}}">
+        <view class='active-block-title'>第{{item.issue}}期 <view class='fn-right'>您的排名：<text>{{item.self_rank}}</text></view></view>
+        <view class='active-block-info clearfix'>
+            <view class='active-info-left fn-left'>
+              <view class='active-info-rank clearfix'>
+                <view class='active-info-head fn-left'><image src='{{item.avatar}}'></image></view>
+                <text class='active-info-nick'>{{item.name}}</text>
+                <view class='active-info-energy'>
+                  <image src='../images/battery_mini.png'></image>
+                  <text>x {{item.total_value}}</text>
+                </view>
+              </view>
+              <view class='active-info-time'>活动时间 {{item.start_time}} - {{item.end_time}}</view>
+            </view>
+            <view class='active-info-right fn-right'>
+              <image src='{{item.cx_img}}'></image>
+              <view>{{item.cx_name}}</view>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>
+
+<!--往期活动  -->
+ <view class='active-past'>
+   <view class='active-join-title'>往期活动</view>
+   <view class='avitve-main'>
+    <view class='active-join-block active-block' wx:for="{{pastActive}}" bindtap='pastActive' wx:key="id"  data-active_start_time='{{item.start_timestamp}}' data-active_end_time ="{{item.end_timestamp}}" data-activity_id='{{item.activity_id}}'>
+        <view class='active-block-title'>第{{item.issue}}期</view>
+        <view class='active-block-info clearfix'>
+            <view class='active-info-left fn-left'>
+              <view class='active-info-rank clearfix'>
+                <view class='active-info-head fn-left'><image src='{{item.avatar}}'></image></view>
+                <text class='active-info-nick'>{{item.name}}</text>
+                <view class='active-info-energy'>
+                  <image src='../images/battery_mini.png'></image>
+                  <text>x {{item.total_value}}</text>
+                </view>
+              </view>
+              <view class='active-info-time'>活动时间 {{item.start_time}} - {{item.end_time}}</view>
+            </view>
+            <view class='active-info-right fn-right'>
+              <image src='{{item.cx_img}}'></image>
+              <view>{{item.cx_name}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- <view class='active-join-block active-block'>
+        <view class='active-block-title'>第2期</view>
+        <view class='active-block-info clearfix'>
+            <view class='active-info-left fn-left'>
+              <view class='active-info-rank clearfix'>
+                <view class='active-info-head fn-left'><image src='http://i1.dd-img.com/assets/image/1530584761-f6f4f215755d79cf-750w-500h.png'></image></view>
+                <text class='active-info-nick'>微信昵称</text>
+                <view class='active-info-energy'>
+                  <image src='../images/battery_mini.png'></image>
+                  <text>x 43100</text>
+                </view>
+              </view>
+              <view class='active-info-time'>活动时间 2018.6.25 - 6.27</view>
+            </view>
+            <view class='active-info-right fn-right'>
+              <image src='http://i1.dd-img.com/assets/image/1530584761-f6f4f215755d79cf-750w-500h.png'></image>
+              <view>比亚迪 秦</view>
+            </view>
+        </view>
+    </view> -->
+  </view>
+</view> 

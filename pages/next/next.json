@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "下期预告",
+  "usingComponents": {
+    "user-btn": "/pages/component/userInfo/userInfo"
+  }
+}
